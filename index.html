@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Murathan Pide ve Lahmacun</title>
+  <style>
+    :root {
+      --primary: #D35400; 
+      --text-dark: #2C3E50; 
+      --text-light: #7F8C8D;
+      --bg-color: #F9F7F3; 
+      --card-bg: #FFFFFF;
+      --success: #27AE60; /* Telefon butonu için güven veren yeşil */
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-dark);
+      margin: 0;
+      padding: 20px 15px;
+      max-width: 600px; /* Telefonda ve bilgisayarda ortalı durması için */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 { 
+      margin: 0; 
+      font-size: 32px; 
+      font-weight: 900;
+      color: var(--text-dark);
+      letter-spacing: -0.5px;
+    }
+
+    .header p { 
+      margin: 5px 0 0 0; 
+      font-size: 15px; 
+      font-weight: 600; 
+      color: var(--primary); 
+      letter-spacing: 2px;
+    }
+
+    /* İLETİŞİM KARTI VE BUTONLAR */
+    .contact-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.03);
+      text-align: center;
+    }
+
+    .contact-card .address {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 12px 5px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.2s;
+    }
+
+    .btn:active { opacity: 0.8; }
+
+    .btn-call {
+      background-color: var(--success);
+      color: white;
+    }
+
+    .btn-map {
+      background-color: var(--text-dark);
+      color: white;
+    }
+    
+    h2 {
+      color: var(--text-dark);
+      font-size: 20px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      background: rgba(211, 84, 0, 0.2);
+      border-radius: 2px;
+    }
+
+    details {
+      background: var(--card-bg);
+      margin-bottom: 12px;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    summary {
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+    
+    .ozel-menu summary .menu-name {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ozel-menu summary .menu-name::after {
+      content: "▼";
+      font-size: 12px;
+      color: var(--primary);
+      transition: transform 0.3s ease;
+    }
+
+    .ozel-menu[open] summary .menu-name::after {
+      transform: rotate(180deg);
+    }
+
+    .price { 
+      color: var(--primary); 
+      font-size: 17px; 
+      font-weight: 800;
+      background: rgba(211, 84, 0, 0.08);
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+
+    .content { 
+      margin-top: 12px; 
+      font-size: 14px; 
+      color: var(--text-light); 
+      line-height: 1.6; 
+      border-top: 1px dashed #eee; 
+      padding-top: 12px; 
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      font-size: 13px;
+      color: var(--text-light);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+      line-height: 1.8;
+    }
+
+    .footer span { 
+      color: var(--text-dark); 
+      font-weight: 700; 
+    }
+
+    .footer-contact {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+      font-size: 14px;
+      color: var(--text-dark);
+    }
+
+    .footer-contact a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .ikram {
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 16px;
+      margin-top: 15px;
+      display: inline-block;
+      padding: 8px 16px;
+      background: rgba(211, 84, 0, 0.08);
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>MURATHAN</h1>
+    <p>PİDE VE LAHMACUN</p>
+  </div>
+
+  <div class="contact-card">
+    <div class="address">📍 İlkadım / Samsun</div>
+    <div class="action-buttons">
+      <a href="tel:+903620000000" class="btn btn-call">📞 Paket Servis</a>
+      <a href="https://share.google/DGzlx2HcLJVaOMisa" target="_blank" class="btn btn-map">🗺️ Yol Tarifi Al</a>
+    </div>
+  </div>
+
+  <h2>Müdavim Menüleri</h2>
+  <details class="ozel-menu">
+    <summary>
+      <span class="menu-name">Raşit Menü</span>
+      <span class="price">200 TL</span>
+    </summary>
+    <div class="content">
+      <strong>İçindekiler:</strong> Özel hazırlanmış karışık pide ve ekstralar.<br>
+      <em>Tıklanabilir özel menü örneği. Buraya istediğin açıklamayı yazabilirsin.</em>
+    </div>
+  </details>
+
+  <h2>Pide ve Lahmacunlar</h2>
+  <details><summary>Lahmacun <span class="price">75 TL</span></summary></details>
+  <details><summary>Kapalı Kıymalı <span class="price">180 TL</span></summary></details>
+  <details><summary>Kapalı Kaşarlı <span class="price">180 TL</span></summary></details>
+  <details><summary>Kapalı Beyaz Peynirli <span class="price">180 TL</span></summary></details>
+  <details><summary>Açık Kıymalı <span class="price">250 TL</span></summary></details>
+  <details><summary>Açık Kaşarlı <span class="price">250 TL</span></summary></details>
+  <details><summary>Açık B. Peynirli <span class="price">250 TL</span></summary></details>
+  <details><summary>Açık Kuşbaşılı <span class="price">250 TL</span></summary></details>
+  <details><summary>Açık Kuşbaşı Kaşar <span class="price">250 TL</span></summary></details>
+  <details><summary>Açık Karışık <span class="price">250 TL</span></summary></details>
+  <details><summary>Açık Pastırmalı <span class="price">300 TL</span></summary></details>
+  <details><summary>Açık Sucuklu <span class="price">250 TL</span></summary></details>
+  <details><summary>Açık Kavurmalı <span class="price">350 TL</span></summary></details>
+  <details><summary>Açık Kavurma Kaşarlı <span class="price">350 TL</span></summary></details>
+  <details><summary>Yağlı Yumurtalı <span class="price">100 TL</span></summary></details>
+
+  <h2>Tatlılar</h2>
+  <details><summary>Künefe <span class="price">120 TL</span></summary></details>
+  <details><summary>Katmer <span class="price">180 TL</span></summary></details>
+
+  <h2>İçecekler</h2>
+  <details><summary>Kutu Kola / Fanta / Sprite / Ice Tea <span class="price">50 TL</span></summary></details>
+  <details><summary>1 Lt Kola / Fanta / Sprite / Ice Tea <span class="price">70 TL</span></summary></details>
+  <details><summary>2,5 Lt Kola / Fanta / Sprite / Ice Tea <span class="price">100 TL</span></summary></details>
+  <details><summary>Soda <span class="price">20 TL</span></summary></details>
+  <details><summary>Su <span class="price">10 TL</span></summary></details>
+  <details><summary>Ayran <span class="price">30 TL</span></summary></details>
+
+  <div class="footer">
+    <strong>ÜRÜNLERİMİZDE:</strong><br>
+    Kıyma, Kuşbaşı <span>(Cengiz Kasap)</span><br>
+    Pastırma, Kavurma, Beyaz Peynir, Yumurta <span>(Çamlıdağ Şarküteri)</span><br>
+    Ayran, Kaşar <span>(Otat Süt Ürünleri)</span><br>
+    Baharatlar <span>(Kakule Mısır Çarşısı)</span><br>
+    Kullanılmaktadır.<br>
+    <span class="ikram">Semaver Çayımız İkramdır</span>
+
+    <div class="footer-contact">
+      Sipariş Hattı: <a href="tel:+903624450496">0(362) 445 04 96</a><br>
+      <a href="tel:+905000000000" style="color: var(--text-dark);">0(500) 000 00 00</a>
+    </div>
+  </div>
+
+</body>
+</html>
