@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="l24MglMv0ZMkwyESJxHRl0hRYHlrGU_w6wvmdPAF1Ko" />
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D2VEVP6FER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D2VEVP6FER');
+  </script>
+
   <title>Murathan Pide ve Lahmacun</title>
   <style>
     :root {
@@ -26,187 +35,51 @@
       margin-right: auto;
     }
 
-    .header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .header h1 { 
-      margin: 0; 
-      font-size: 32px; 
-      font-weight: 900;
-      color: var(--text-dark);
-      letter-spacing: -0.5px;
-    }
-
-    .header p { 
-      margin: 5px 0 0 0; 
-      font-size: 15px; 
-      font-weight: 600; 
-      color: var(--primary); 
-      letter-spacing: 2px;
-    }
+    .header { text-align: center; margin-bottom: 20px; }
+    .header h1 { margin: 0; font-size: 32px; font-weight: 900; color: var(--text-dark); letter-spacing: -0.5px; }
+    .header p { margin: 5px 0 0 0; font-size: 15px; font-weight: 600; color: var(--primary); letter-spacing: 2px; }
 
     .contact-card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 15px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      border: 1px solid rgba(0,0,0,0.03);
-      text-align: center;
+      background: var(--card-bg); border-radius: 12px; padding: 15px; margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.03); text-align: center;
     }
-
-    .contact-card .address {
-      font-size: 14px;
-      color: var(--text-light);
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-
-    .action-buttons {
-      display: flex;
-      gap: 10px;
-    }
-
-    .btn {
-      flex: 1;
-      padding: 12px 5px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .btn-call {
-      background-color: var(--success);
-      color: white;
-    }
-
-    .btn-map {
-      background-color: var(--text-dark);
-      color: white;
-    }
+    .contact-card .address { font-size: 14px; color: var(--text-light); margin-bottom: 12px; font-weight: 500; }
+    .action-buttons { display: flex; gap: 10px; }
+    .btn { flex: 1; padding: 12px 5px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; display: flex; justify-content: center; align-items: center; gap: 6px; }
+    .btn-call { background-color: var(--success); color: white; }
+    .btn-map { background-color: var(--text-dark); color: white; }
     
-    h2 {
-      color: var(--text-dark);
-      font-size: 20px;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    h2 { color: var(--text-dark); font-size: 20px; margin-top: 30px; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+    h2::after { content: ""; flex: 1; height: 2px; background: rgba(211, 84, 0, 0.2); border-radius: 2px; }
 
-    h2::after {
-      content: "";
-      flex: 1;
-      height: 2px;
-      background: rgba(211, 84, 0, 0.2);
-      border-radius: 2px;
-    }
-
-    details {
-      background: var(--card-bg);
-      margin-bottom: 12px;
-      padding: 16px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.05);
-      border: 1px solid rgba(0,0,0,0.03);
-    }
-
-    summary {
-      font-weight: 700;
-      font-size: 16px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      list-style: none;
-    }
-
+    details { background: var(--card-bg); margin-bottom: 12px; padding: 16px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.03); }
+    summary { font-weight: 700; font-size: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
     summary::-webkit-details-marker { display: none; }
     
-    .ozel-menu summary .menu-name {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .ozel-menu summary .menu-name { display: flex; align-items: center; gap: 8px; }
+    .ozel-menu summary .menu-name::after { content: "▼"; font-size: 12px; color: var(--primary); transition: transform 0.3s ease; }
+    .ozel-menu[open] summary .menu-name::after { transform: rotate(180deg); }
 
-    .ozel-menu summary .menu-name::after {
-      content: "▼";
-      font-size: 12px;
-      color: var(--primary);
-      transition: transform 0.3s ease;
-    }
+    .price { color: var(--primary); font-size: 17px; font-weight: 800; background: rgba(211, 84, 0, 0.08); padding: 4px 8px; border-radius: 6px; }
 
-    .ozel-menu[open] summary .menu-name::after {
-      transform: rotate(180deg);
-    }
-
-    .price { 
-      color: var(--primary); 
-      font-size: 17px; 
-      font-weight: 800;
-      background: rgba(211, 84, 0, 0.08);
-      padding: 4px 8px;
-      border-radius: 6px;
-    }
-
-    .content { 
-      margin-top: 12px; 
-      font-size: 14px; 
-      color: var(--text-light); 
-      line-height: 1.6; 
-      border-top: 1px dashed #eee; 
-      padding-top: 12px; 
+    .content { margin-top: 12px; font-size: 14px; color: var(--text-light); line-height: 1.6; border-top: 1px dashed #eee; padding-top: 12px; }
+    
+    /* GÖRSELLER İÇİN YENİ CSS AYARLARI */
+    .menu-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      display: block;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 20px;
-      background: var(--card-bg);
-      border-radius: 12px;
-      font-size: 13px;
-      color: var(--text-light);
-      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-      line-height: 1.8;
-    }
-
-    .footer span { 
-      color: var(--text-dark); 
-      font-weight: 700; 
-    }
-
-    .footer-contact {
-      margin-top: 15px;
-      padding-top: 15px;
-      border-top: 1px solid #eee;
-      font-size: 16px;
-      color: var(--text-dark);
-    }
-
-    .footer-contact a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .ikram {
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 16px;
-      margin-top: 15px;
-      display: inline-block;
-      padding: 8px 16px;
-      background: rgba(211, 84, 0, 0.08);
-      border-radius: 20px;
-    }
+    .footer { text-align: center; margin-top: 40px; padding: 20px; background: var(--card-bg); border-radius: 12px; font-size: 13px; color: var(--text-light); box-shadow: 0 4px 6px rgba(0,0,0,0.02); line-height: 1.8; }
+    .footer span { color: var(--text-dark); font-weight: 700; }
+    .footer-contact { margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; font-size: 16px; color: var(--text-dark); }
+    .footer-contact a { color: var(--primary); text-decoration: none; font-weight: 700; }
+    .ikram { color: var(--primary); font-weight: 800; font-size: 16px; margin-top: 15px; display: inline-block; padding: 8px 16px; background: rgba(211, 84, 0, 0.08); border-radius: 20px; }
   </style>
 </head>
 <body>
@@ -231,30 +104,125 @@
       <span class="price">250 TL</span>
     </summary>
     <div class="content">
+      <img src="Raşit-Menü.jpg" alt="Raşit Menü" class="menu-img">
       <strong>İçindekiler:</strong> Özel hazırlanmış yumurtalı karışık pide.<br>
-      <em></em>
     </div>
   </details>
 
   <h2>Pide ve Lahmacunlar</h2>
-  <details><summary>Lahmacun <span class="price">75 TL</span></summary></details>
-  <details><summary>Kapalı Kıymalı <span class="price">200 TL</span></summary></details>
-  <details><summary>Kapalı Kaşarlı <span class="price">200 TL</span></summary></details>
-  <details><summary>Kapalı Beyaz Peynirli <span class="price">200 TL</span></summary></details>
-  <details><summary>Açık Kıymalı <span class="price">250 TL</span></summary></details>
-  <details><summary>Açık Kaşarlı <span class="price">250 TL</span></summary></details>
-  <details><summary>Açık B. Peynirli <span class="price">250 TL</span></summary></details>
-  <details><summary>Açık Kuşbaşılı <span class="price">250 TL</span></summary></details>
-  <details><summary>Açık Kuşbaşı Kaşar <span class="price">250 TL</span></summary></details>
-  <details><summary>Açık Karışık <span class="price">250 TL</span></summary></details>
-  <details><summary>Açık Pastırmalı <span class="price">300 TL</span></summary></details>
-  <details><summary>Açık Sucuklu <span class="price">250 TL</span></summary></details>
-  <details><summary>Açık Kavurmalı <span class="price">350 TL</span></summary></details>
-  <details><summary>Açık Kavurma Kaşarlı <span class="price">350 TL</span></summary></details>
-  <details><summary>Yağlı Yumurtalı <span class="price">100 TL</span></summary></details>
+  
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Lahmacun</span> <span class="price">75 TL</span></summary>
+    <div class="content">
+      <img src="lahmacun.jpg" alt="Lahmacun" class="menu-img">
+    </div>
+  </details>
+
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Kapalı Kıymalı</span> <span class="price">200 TL</span></summary>
+    <div class="content">
+      <img src="kapali-kiymali.jpg" alt="Kapalı Kıymalı" class="menu-img">
+    </div>
+  </details>
+
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Kapalı Kaşarlı</span> <span class="price">200 TL</span></summary>
+    <div class="content">
+      <img src="kapali-kasarli.jpg" alt="Kapalı Kaşarlı" class="menu-img">
+    </div>
+  </details>
+
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Kapalı Beyaz Peynirli</span> <span class="price">200 TL</span></summary>
+    <div class="content">
+      <img src="kapali-peynirli.jpg" alt="Kapalı Beyaz Peynirli" class="menu-img">
+    </div>
+  </details>
+
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Açık Kıymalı</span> <span class="price">250 TL</span></summary>
+    <div class="content">
+      <img src="acik-kiymali.jpg" alt="Açık Kıymalı" class="menu-img">
+    </div>
+  </details>
+
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Açık Kaşarlı</span> <span class="price">250 TL</span></summary>
+    <div class="content">
+      <img src="acik-kasarli.jpg" alt="Açık Kaşarlı" class="menu-img">
+    </div>
+  </details>
+
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Açık B. Peynirli</span> <span class="price">250 TL</span></summary>
+    <div class="content">
+      <img src="acik-peynirli.jpg" alt="Açık B. Peynirli" class="menu-img">
+    </div>
+  </details>
+
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Açık Kuşbaşılı</span> <span class="price">250 TL</span></summary>
+    <div class="content">
+      <img src="acik-kusbasili.jpg" alt="Açık Kuşbaşılı" class="menu-img">
+    </div>
+  </details>
+
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Açık Kuşbaşı Kaşar</span> <span class="price">250 TL</span></summary>
+    <div class="content">
+      <img src="kusbasi-kasar.jpg" alt="Açık Kuşbaşı Kaşar" class="menu-img">
+    </div>
+  </details>
+
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Açık Karışık</span> <span class="price">250 TL</span></summary>
+    <div class="content">
+      <img src="acik-karisik.jpg" alt="Açık Karışık" class="menu-img">
+    </div>
+  </details>
+
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Açık Pastırmalı</span> <span class="price">300 TL</span></summary>
+    <div class="content">
+      <img src="acik-pastirmali.jpg" alt="Açık Pastırmalı" class="menu-img">
+    </div>
+  </details>
+
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Açık Sucuklu</span> <span class="price">250 TL</span></summary>
+    <div class="content">
+      <img src="acik-sucuklu.jpg" alt="Açık Sucuklu" class="menu-img">
+    </div>
+  </details>
+
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Açık Kavurmalı</span> <span class="price">350 TL</span></summary>
+    <div class="content">
+      <img src="acik-kavurmali.jpg" alt="Açık Kavurmalı" class="menu-img">
+    </div>
+  </details>
+
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Açık Kavurma Kaşarlı</span> <span class="price">350 TL</span></summary>
+    <div class="content">
+      <img src="kavurma-kasarli.jpg" alt="Açık Kavurma Kaşarlı" class="menu-img">
+    </div>
+  </details>
+
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Yağlı Yumurtalı</span> <span class="price">100 TL</span></summary>
+    <div class="content">
+      <img src="yagli-yumurtali.jpg" alt="Yağlı Yumurtalı" class="menu-img">
+    </div>
+  </details>
 
   <h2>Tatlılar</h2>
-  <details><summary>Katmer <span class="price">180 TL</span></summary></details>
+  <details class="ozel-menu">
+    <summary><span class="menu-name">Katmer</span> <span class="price">180 TL</span></summary>
+    <div class="content">
+      <img src="katmer.jpg" alt="Katmer" class="menu-img">
+    </div>
+  </details>
 
   <h2>İçecekler</h2>
   <details><summary>Kutu Sarıyer Kola / Sarıyer Portakal <span class="price">50 TL</span></summary></details>
